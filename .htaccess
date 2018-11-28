@@ -6,8 +6,10 @@ AddDefaultCharset utf-8
 
     RewriteEngine On
     RewriteBase /
- RewriteRule ^([a-z]+)/$ /?page=$1&%{QUERY_STRING} [NS,L]
- RewriteRule ^([a-z]+)$ /?page=$1&%{QUERY_STRING} [NS,L]
+ RewriteRule ^api/([a-z]+)/$ /?page=api&u=$1&%{QUERY_STRING} [NS,L]
+ RewriteRule ^api/([a-z]+)$ /?page=api&u=$1&%{QUERY_STRING} [NS,L]
+ RewriteRule ^api/profile/([a-z]+)/$ /?page=api&u=profile&t=$1&%{QUERY_STRING} [NS,L]
+  RewriteRule ^api/profile/([a-z]+)$ /?page=api&u=profile&t=$1&%{QUERY_STRING} [NS,L]
 
 	RewriteCond $1 !^(index\.php)
     RewriteCond %{REQUEST_URI} !\.(css│js│jpg│gif)$
