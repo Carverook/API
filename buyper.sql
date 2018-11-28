@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 27 2018 г., 01:31
+-- Время создания: Ноя 28 2018 г., 17:15
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.2.0
 
@@ -51,6 +51,27 @@ INSERT INTO `account` (`id`, `login`, `email`, `password`, `salt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `profile`
+--
+
+CREATE TABLE `profile` (
+  `id` int(10) NOT NULL,
+  `photo` text NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `number` varchar(13) NOT NULL,
+  `type` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `profile`
+--
+
+INSERT INTO `profile` (`id`, `photo`, `name`, `number`, `type`) VALUES
+(1, 'Нету', 'Test2', '31', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `token`
 --
 
@@ -64,7 +85,8 @@ CREATE TABLE `token` (
 --
 
 INSERT INTO `token` (`id`, `token`) VALUES
-(0, 'jsm8tw3NTdBXpFoOANtZQhkD86Kn1zOLlC7Aa8hgohTgtVwufkSWRT1u9GDB');
+(0, 'jsm8tw3NTdBXpFoOANtZQhkD86Kn1zOLlC7Aa8hgohTgtVwufkSWRT1u9GDB'),
+(2, 'K5vyCyje66aavr9TLfapSEJvknU6lniM5HlQtorMjSCSG8CPHpjjJ7Bq1Wdm');
 
 --
 -- Индексы сохранённых таблиц
@@ -77,6 +99,12 @@ ALTER TABLE `account`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `login` (`login`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Индексы таблицы `profile`
+--
+ALTER TABLE `profile`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `token`
