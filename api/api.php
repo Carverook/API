@@ -13,3 +13,7 @@
     {
         include_once "logout_api.php";
     }
+    else if($u == "profile")
+    {
+        include_once "profile_api.php";
+    }
