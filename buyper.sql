@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 28 2018 г., 17:15
+-- Время создания: Ноя 29 2018 г., 21:25
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.2.0
 
@@ -51,6 +51,51 @@ INSERT INTO `account` (`id`, `login`, `email`, `password`, `salt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `likelist`
+--
+
+CREATE TABLE `likelist` (
+  `id` int(10) NOT NULL,
+  `product` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `likelist`
+--
+
+INSERT INTO `likelist` (`id`, `product`) VALUES
+(2, 234),
+(2, 234),
+(2, 234),
+(2, 2341),
+(2, 8),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `OrdersHistory`
+--
+
+CREATE TABLE `OrdersHistory` (
+  `id` int(10) NOT NULL,
+  `product` varchar(200) NOT NULL,
+  `total` int(11) NOT NULL,
+  `date` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `OrdersHistory`
+--
+
+INSERT INTO `OrdersHistory` (`id`, `product`, `total`, `date`) VALUES
+(2, '2', 0, '0000-00-00 00:00:00'),
+(2, '2', 0, '0000-00-00 00:00:00'),
+(2, '2', 1, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `profile`
 --
 
@@ -67,7 +112,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `photo`, `name`, `number`, `type`) VALUES
-(1, 'Нету', 'Test2', '31', 1);
+(2, 'Нету', 'Admin', '31', 1);
 
 -- --------------------------------------------------------
 
